@@ -30,6 +30,6 @@ namespace TestProject1
             string actual = moodAnalyser.AnalyzeMood();
             Assert.AreEqual(expected, actual);
         }
-    }
 
+    }
 }
