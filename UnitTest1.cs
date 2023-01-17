@@ -6,12 +6,11 @@ namespace TestProject1
     [TestClass]
     public class UnitTest1
     {
-        //MoodAnalyser moodAnalyser;
-        //string message = " I am in happy Mood";
+        
         [TestInitialize]
         public void SetUp()
         {
-            //moodAnalyser = new MoodAnalyser(message);
+            
         }
         [TestMethod]
         public void TestMethodForHappyMood()
@@ -32,4 +31,5 @@ namespace TestProject1
             Assert.AreEqual(expected, actual);
         }
     }
+
 }
