@@ -9,6 +9,11 @@ namespace MoodAnalyserProb
     public class MoodAnalyser
     {
         string message;
+
+        public MoodAnalyser()
+        {
+        }
+
         public MoodAnalyser(string message)
         {
             this.message = message;
@@ -34,10 +39,9 @@ namespace MoodAnalyserProb
             }
             catch (NullReferenceException)
             {
-                return "happy";
+                throw new CustomException(CustomException.ExceptionType.NULL_EXCEPTION, "Mood should not be null");
 
             }
         }
-
     }
 }
