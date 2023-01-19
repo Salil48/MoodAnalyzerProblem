@@ -4,14 +4,15 @@ using MoodAnalyserProb;
 namespace TestProject1
 {
     [TestClass]
+
     public class UnitTest1
     {
-        
+        //  MoodAnalyser happyMood;
 
         [TestInitialize]
         public void SetUp()
         {
-            
+            //moodAnalyser = new MoodAnalyser(message);
         }
         /// <summary>
         /// UC2-Handling exceptions
@@ -111,7 +112,6 @@ namespace TestProject1
 
             }
             catch (CustomException actual)
-
             {
                 Assert.AreEqual(expected, actual.Message);
             }
@@ -173,6 +173,25 @@ namespace TestProject1
                 Assert.AreEqual(expected, actual1.Message);
             }
         }
+        /// <summary>
+        /// UC6-Using Reflection-Invoke Method
+        /// </summary>
+        [TestMethod]
+        public void Reflection_Return_Method()
+        {
+            string expected = "happy";
+            MoodAnalyserFactory factory = new MoodAnalyserFactory();
+            string actual = factory.InvokeAnalyserMethod("happy", "AnalyzeMood");
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Reflection_Return_Invalid_Method()
+        {
+            string expected = "happy";
+            MoodAnalyserFactory factory = new MoodAnalyserFactory();
+            string actual = factory.InvokeAnalyserMethod("happy", "Analyze");
 
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
